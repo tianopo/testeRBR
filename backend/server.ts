@@ -1,5 +1,7 @@
 import cors from 'cors'
 import express, { Application } from 'express'
+import * as dotenv from 'dotenv'
+import conn from './db/conn'
 import { setRoutes } from './setRoutes'
 import { handleControllerResponse } from './utils/handleControllerResponse'
 import { logServer } from './utils/logServer'
@@ -23,6 +25,7 @@ class Server {
       res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
       next()
     })
+    dotenv.config({ path: '.env' })
   }
 
   private routes() {
@@ -34,7 +37,9 @@ class Server {
     })
   }
 
-  init() {
+  async init() {
+    await conn();
+    
     const PORT = 7000
     const HOST = 'localhost'
 
