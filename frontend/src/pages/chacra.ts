@@ -1,7 +1,7 @@
 import { extendTheme } from '@chakra-ui/react';
 import { defineStyle } from '@chakra-ui/react'
 import { GlobalStyleProps } from '@chakra-ui/theme-tools'
-import { corBordaUi, corFundoUi, corTextoUi } from './config/coresUi'
+import { corBordaUi, corFundoUi, corTextoUi } from '../config/coresUi'
 
 const theme = extendTheme({
   breakpoints: {
