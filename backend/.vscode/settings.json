@@ -1,0 +1,26 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#ffffffcc",
+    "titleBar.activeBackground": "#a80000cc",
+    "titleBar.inactiveBackground": "#410000cc",
+    "errorLens.infoForeground": "#ff0000",
+    "errorLens.infoBackground": "#4444446f",
+    "editorInfo.foreground": "#ff0000"
+  },
+  "files.exclude": {
+    "**/.git": true,
+  },
+  "search.exclude": {
+    "**/dist": true
+  },
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.addMissingImports": "explicit"
+  },
+  "editor.wordWrap": "on",
+}
