@@ -14,7 +14,10 @@ export const logServer = (host: string, port: number, isHttps?: boolean) => {
   )
 
   // eslint-disable-next-line no-restricted-syntax
-  console.log(`${CORES_LOG.fg.cyan}Ambiente:${CORES_LOG.reset} ${process.env.NODE_ENV || 'produção'}`)
+  console.log(`${CORES_LOG.fg.cyan}Ambiente:${CORES_LOG.reset} desenvolvimento`)
+
+  // eslint-disable-next-line no-console, no-restricted-syntax
+  console.log(`${CORES_LOG.fg.cyan}Url local:${CORES_LOG.reset} http://${host}:${port}`)
 
   if (isHttps) {
     // eslint-disable-next-line no-restricted-syntax
