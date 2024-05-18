@@ -12,6 +12,10 @@ const coresUi = {
     secundaria: '#FFF',
     'lista-alternada': '#FBFBFB',
   },
+  icone: {
+    primaria: '#C3C3C3',
+    'com-fundo-primario':'#FFF',
+  },
   borda: '#C3C3C3',
   boxShadow: '0px 1px 4px 0px rgba(4, 4, 4, 0.30)',
 }
@@ -19,6 +23,7 @@ const coresUi = {
 const corTextoUi = coresUi.texto
 const corFundoUi = coresUi.fundo
 const corBordaUi = coresUi.borda
+const corIconeUi = coresUi.icone
 const corPrimariaUi = coresUi.primaria
 const corSecundariaUi = coresUi.secundaria
 const corErroUi = coresUi.erro
@@ -29,6 +34,7 @@ export {
   corBoxShadowUi,
   corErroUi,
   corFundoUi,
+  corIconeUi,
   corPrimariaUi,
   corSecundariaUi,
   corTextoUi,
