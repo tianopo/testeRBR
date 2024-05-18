@@ -90,16 +90,17 @@ O frontend da RBR DIGITAL é desenvolvido utilizando as seguintes tecnologias:
 /frontend
   ├── /public
   ├── /src
-        ├── /@types
-        ├── /components
-        ├── /config
-        ├── /hooks
-        ├── /pages
-        └── /utils
+  │     ├── /@types
+  │     ├── /components
+  │     ├── /config
+  │     ├── /hooks
+  │     ├── /pages
+  │     └── /utils
   ├── next.config.mjs
   ├── package-lock.json
   ├── package.json
   └── tsconfig.json
+
 
 ### Configuração e Instalação
 
