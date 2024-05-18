@@ -14,24 +14,6 @@ The backend of RBR DIGITAL is built using the following technologies:
  - Desenvolvimento de API: Criação de APIs RESTful para lidar com diversas operações.
  - Integração de banco de dados: usando o Mongoose para interagir com o MongoDB, definindo esquemas e executando operações CRUD.
 
- ### Estrutura do Projeto
- O projeto está organizado em vários diretórios para separar preocupações e manter uma arquitetura limpa. Abaixo está uma visão geral de alto nível da estrutura de diretórios:
-
-/backend
-  ├── /.vscode
-  ├── /controllers
-  ├── /db
-  ├── /models
-  ├── /routes
-  ├── /utils
-  ├── .env.local.ts
-  ├── index.ts
-  ├── package.json
-  ├── RBR.postman_collection.json
-  ├── server.ts
-  ├── setRoutes.ts
-  └── tsconfig.json
-
 ### Configuração e Instalação
 
 1. Clone o repositório e entre na pasta do backend:
@@ -83,24 +65,6 @@ O frontend da RBR DIGITAL é desenvolvido utilizando as seguintes tecnologias:
  - Roteamento: Implementando roteamento do lado do cliente usando Next.js.
  - Estilo: Personalização e tematização do aplicativo usando as soluções de estilo do Chakra UI.
  - Manipulação de formulários: gerenciamento de formulários e validações de formulários usando bibliotecas como React Hook Form e Yup.
-
- ### Estrutura do Projeto
- O projeto está organizado em vários diretórios para separar preocupações e manter uma arquitetura limpa. Abaixo está uma visão geral de alto nível da estrutura de diretórios:
-
-/frontend
-  ├── /public
-  ├── /src
-  │     ├── /@types
-  │     ├── /components
-  │     ├── /config
-  │     ├── /hooks
-  │     ├── /pages
-  │     └── /utils
-  ├── next.config.mjs
-  ├── package-lock.json
-  ├── package.json
-  └── tsconfig.json
-
 
 ### Configuração e Instalação
 
