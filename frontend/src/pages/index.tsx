@@ -115,7 +115,7 @@ export default function Home() {
                 <ListagemPatterns.Item
                   templateColumns={{ base: '1fr', md: templateColumnsDesktop }}
                   templateAreas={{ base: templateAreasMobile, md: templateAreasDesktop }}
-                  key={item.id}
+                  key={item._id}
                 >
                   <Flex minW={0} gridArea={'nome'}>
                     <TextoUi maxW={'100%'} whiteSpace={'nowrap'} overflow={'hidden'} textOverflow={'ellipsis'} {...textoBaseUi} color={corTextoUi.primaria}>
@@ -145,10 +145,9 @@ export default function Home() {
                     justify={'center'}
                     gap={gapGlobalUi}
                   >
-                    <UpdateIcon onClick={() => router.push(appRoutes.employeeGet(item.id!))} />
+                    <UpdateIcon onClick={() => router.push(appRoutes.employeeGet(item._id))} />
                     <DeleteIcon
-                      onClick={() => {
-                      }}
+                      onClick={() => mutate(item._id)}
                     />
                   </Flex>
                 </ListagemPatterns.Item>

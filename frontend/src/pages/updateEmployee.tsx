@@ -31,7 +31,7 @@ export default function UpdateEmployee() {
 
   useEffect(() => {
     if (!data) return
-    setValue('id', data.id!)
+    setValue('id', data._id!)
     setValue('nome', data.nome!)
     setValue('cargo', data.cargo!)
     setValue('departamento', data.departamento!)

@@ -1,5 +1,5 @@
 export interface IAbstractModelAtributos {
-  id: string
+  _id: string
   criadoEm?: Date
   atualizadoEm?: Date
 }
@@ -12,5 +12,5 @@ export interface IEmployeeAtributos extends IAbstractModelAtributos {
 }
 
 export interface IEmployeeDTO extends Partial<IEmployeeAtributos> {
-  id: string
+  _id: string
 }

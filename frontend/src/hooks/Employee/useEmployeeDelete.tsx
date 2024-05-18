@@ -8,7 +8,7 @@ import { AxiosError } from 'axios'
 export const useEmployeeDelete = () => {
   const { mutate, status, isLoading } = useMutation(endPoint, {
     onSuccess: () => {
-      queryClient.refetchQueries(['employee-delete'])
+      queryClient.refetchQueries(['employee_list'])
       responseSuccess('Funcionário deletado com sucesso')
     },
     onError: (erro: AxiosError) => responseError(erro),
