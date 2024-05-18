@@ -69,7 +69,7 @@ export const Sidebar = ({ isOpen, onClose }: ISidebar) => {
           <MenuAccessUi
             texto={"Criar"}
             icone={ListPlus}
-            rota={'/criar'}
+            rota={'/createEmployee'}
             onClose={onClose}
           />
         </FlexColumnUi>
