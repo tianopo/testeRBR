@@ -42,7 +42,6 @@ export const employeesController = {
     try {
       const id = req.params.id
       if (!id) return res.status(404).json({msg: "ID ausente"})
-
       const employee = await Employees.findById(id);
       if (!employee) return res.status(404).json({msg: "empregado não encontrado"})
 

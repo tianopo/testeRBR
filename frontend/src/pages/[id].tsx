@@ -35,7 +35,7 @@ export default function UpdateEmployee() {
     setValue('nome', data.nome!)
     setValue('cargo', data.cargo!)
     setValue('departamento', data.departamento!)
-  }, [data])
+  }, [JSON.stringify(data)])
 
   return (
     <PageCardContent title="Gerenciar">
@@ -46,14 +46,18 @@ export default function UpdateEmployee() {
               <TextoUi {...textoSubTituloUi} color={corTextoUi.primaria} letterSpacing={'0.1px'}>
                 Gerenciar Funcionário
               </TextoUi>
-              <EditIcon size={fontSizeUi['6xl']} editarHabilitado={isEdicao} onClick={onToggleEdit} />
+              <EditIcon size={fontSizeUi['6xl']} editarHabilitado={!isEdicao} onClick={onToggleEdit} />
             </Flex>
             <EmployeeForm isEdicao={!isEdicao} />
             <Flex flexDir={{ base: 'column', md: 'row' }} gap={{ base: gapGlobalUi }} justify={'space-between'}>
               <ButtonSolidUi onClick={() => router.push(appRoutes.employeeList)}>
                 Voltar
               </ButtonSolidUi>
-              <ButtonFormUi isLoading={isLoading} type="submit" isDisabled={isErro || isLoading}>
+              <ButtonFormUi
+                isLoading={isLoading}
+                type="submit"
+                isDisabled={isErro || isLoading || !isEdicao}
+              >
                 Salvar
               </ButtonFormUi>
             </Flex>
