@@ -14,11 +14,11 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const { currentBreakpoint } = useBreakpoints()
-  const { isOpen, onToggle, onClose } = useDisclosure()
+  const { isOpen, onToggle } = useDisclosure()
   const location = useRouter()
 
   useEffect(() => {
-    if (!['sm'].includes(currentBreakpoint)) onClose()
+    if (!['sm'].includes(currentBreakpoint)) onToggle()
   }, [location])
 
   const LayoutDesktop = useMemo(
