@@ -1,15 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 import { defineStyle } from '@chakra-ui/react'
-import { GlobalStyleProps } from '@chakra-ui/theme-tools'
-import { corBordaUi, corFundoUi, corTextoUi } from '../config/coresUi'
+import { corBordaUi, corFundoUi, corTextoUi } from '../config/colorUi'
+import { breakpoints } from '@/config/breakpoints';
 
 const theme = extendTheme({
-  breakpoints: {
-    sm: '320px',
-    md: '768px',
-    lg: '940px',
-    xl: '1280px',
-  },
+  breakpoints,
   styles: {
     'html, body': {
       bg: corFundoUi.primaria,
