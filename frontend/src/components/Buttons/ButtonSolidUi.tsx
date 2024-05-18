@@ -35,6 +35,6 @@ export const ButtonSolidUi = ({ children, onClick }: ButtonSolidUiProps) => {
 }
 
 interface ButtonSolidUiProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   onClick: () => void
 }
