@@ -8,13 +8,14 @@ import { useMutation } from '@tanstack/react-query'
 import { AxiosError } from 'axios'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router';
+import { appRoutes } from '@/config/appRoutes'
 
 export const useEmployeeUpdate = () => {
   const router = useRouter()
 
-  const { mutate, isLoading } = useMutation(endPoint, {
+  const { mutate, isLoading, status } = useMutation(endPoint, {
     onSuccess: () => {
-      router.back();
+      router.push(appRoutes.employeeList);
       responseSuccess("Funcionário criado com sucesso")
     },
     onError: (erro: AxiosError) => responseError(erro),
@@ -36,9 +37,9 @@ export const useEmployeeUpdate = () => {
   
   async function endPoint(data: Schema): Promise<IEmployeeDTO> {
     const result = await api().put(apiRoutes.employeePut(data.id), data)
-    console.log(result, "oi")
+
     return result.data.data
   }
 
-  return { mutate, isLoading, context }
+  return { mutate, isLoading, context, status }
 }
