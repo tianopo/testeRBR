@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 export const useEmployeeUpdate = () => {
   const router = useRouter()
 
-  const { mutate, isLoading, status } = useMutation(endPoint, {
+  const { mutate, isLoading } = useMutation(endPoint, {
     onSuccess: () => {
       router.back();
       responseSuccess("Funcionário criado com sucesso")
@@ -21,7 +21,7 @@ export const useEmployeeUpdate = () => {
   })
 
   const schema = Yup.object().shape({
-    id: Yup.string().uuid().required().label('Id'),
+    id: Yup.string().required().label('id'),
     nome: Yup.string().required().label("nome"),
     cargo: Yup.string().required().label("cargo"),
     departamento: Yup.string().required().label("departamento"),
@@ -33,11 +33,12 @@ export const useEmployeeUpdate = () => {
     resolver: yupResolver(schema),
     reValidateMode: 'onChange',
   })
-
+  
   async function endPoint(data: Schema): Promise<IEmployeeDTO> {
     const result = await api().put(apiRoutes.employeePut(data.id), data)
+    console.log(result, "oi")
     return result.data.data
   }
 
-  return { mutate, isLoading, context, status }
+  return { mutate, isLoading, context }
 }
