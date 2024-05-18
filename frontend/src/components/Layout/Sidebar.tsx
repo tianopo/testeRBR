@@ -61,15 +61,15 @@ export const Sidebar = ({ isOpen, onClose }: ISidebar) => {
         {!isOpen && <DivisorUi />}
         <FlexColumnUi gap={gapGlobalUi} h={{ base: 'auto', md: '100%' }}>
           <MenuAccessUi
-            texto={"Criar"}
-            icone={ListPlus}
-            rota={'/criar'}
-            onClose={onClose}
-          />
-          <MenuAccessUi
             texto={"Listar"}
             icone={ListBullets}
             rota={'/'}
+            onClose={onClose}
+          />
+          <MenuAccessUi
+            texto={"Criar"}
+            icone={ListPlus}
+            rota={'/criar'}
             onClose={onClose}
           />
         </FlexColumnUi>
