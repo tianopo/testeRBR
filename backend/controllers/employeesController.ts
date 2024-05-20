@@ -41,7 +41,7 @@ export const employeesController = {
   get: async (req: Request, res: Response) => {
     try {
       const id = req.params.id
-      if (!id) return res.status(404).json({msg: "ID ausente"})
+      if (!id || id === "undefined") return res.status(404).json({msg: "ID ausente"})
       const employee = await Employees.findById(id);
       if (!employee) return res.status(404).json({msg: "empregado não encontrado"})
 
@@ -79,7 +79,7 @@ export const employeesController = {
         cargo: req.body.cargo,
         departamento: req.body.departamento,
       }
-
+      
       const { nome, cargo, departamento } = employee
       if (!id || !nome || !cargo || !departamento) return res.status(404).json({msg: "Atributos não encontrados"})
 
