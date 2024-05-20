@@ -21,7 +21,7 @@ export const employeesController = {
       const controllerResponse = handleControllerResponse(response)
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
-      ErroLog('employeesControllerCreate')
+      ErroLog('employeesController Create')
       throw error
     }
   },
@@ -33,7 +33,7 @@ export const employeesController = {
       const controllerResponse = handleControllerResponse(employees)
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
-      ErroLog('employeesControllerGetAll')
+      ErroLog('employeesController GetAll')
       throw error
     }
   },
@@ -49,7 +49,7 @@ export const employeesController = {
 
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
-      ErroLog('employeesControllerGet')
+      ErroLog('employeesController Get')
     }
   },
 
@@ -67,7 +67,7 @@ export const employeesController = {
 
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
-      ErroLog('employeesControllerDelete')
+      ErroLog('employeesController Delete')
     }
   },
 
@@ -91,7 +91,7 @@ export const employeesController = {
 
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
-      ErroLog('employeesControllerUpdate')
+      ErroLog('employeesController Update')
     }
   }
 }
