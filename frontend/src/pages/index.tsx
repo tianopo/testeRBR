@@ -42,7 +42,7 @@ export default function Home() {
     setCurrentPage(1)
   }, [searchTerm])
 
-  const filteredData = data?.reverse().filter(item =>
+  const filteredData = data?.filter(item =>
     item.nome.toLowerCase().includes(searchTerm.toLowerCase())
   ) || []
 

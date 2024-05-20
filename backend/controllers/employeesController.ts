@@ -14,7 +14,7 @@ export const employeesController = {
         departamento: req.body.departamento,
       }
       const { nome, cargo, departamento } = employee
-      if (!nome || !cargo || !departamento) return res.status(404).json({msg: "Atributos não encontrados"})
+      if (!nome || !cargo || !departamento) return res.status(404).json({ msg: "Atributos não encontrados" })
 
       const response = await Employees.create(employee);
 
@@ -28,7 +28,7 @@ export const employeesController = {
 
   getAll: async (_: Request, res: Response) => {
     try {
-      const employees = await Employees.find()
+      const employees = (await Employees.find()).reverse()
 
       const controllerResponse = handleControllerResponse(employees)
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
@@ -41,9 +41,9 @@ export const employeesController = {
   get: async (req: Request, res: Response) => {
     try {
       const id = req.params.id
-      if (!id || id === "undefined") return res.status(404).json({msg: "ID ausente"})
+      if (!id || id === "undefined") return res.status(404).json({ msg: "ID ausente" })
       const employee = await Employees.findById(id);
-      if (!employee) return res.status(404).json({msg: "empregado não encontrado"})
+      if (!employee) return res.status(404).json({ msg: "empregado não encontrado" })
 
       const controllerResponse = handleControllerResponse(employee)
 
@@ -56,10 +56,10 @@ export const employeesController = {
   delete: async (req: Request, res: Response) => {
     try {
       const id = req.params.id
-      if (!id) return res.status(404).json({msg: "ID ausente"})
+      if (!id) return res.status(404).json({ msg: "ID ausente" })
 
       const employee = await Employees.findById(id);
-      if (!employee) return res.status(404).json({msg: "empregado não encontrado"})
+      if (!employee) return res.status(404).json({ msg: "empregado não encontrado" })
 
       const deletedEmployee = await Employees.findByIdAndDelete(id)
 
@@ -79,15 +79,14 @@ export const employeesController = {
         cargo: req.body.cargo,
         departamento: req.body.departamento,
       }
-      
+
       const { nome, cargo, departamento } = employee
-      if (!id || !nome || !cargo || !departamento) return res.status(404).json({msg: "Atributos não encontrados"})
+      if (!id || !nome || !cargo || !departamento) return res.status(404).json({ msg: "Atributos não encontrados" })
 
-      const updateEmployee = await Employees.findByIdAndUpdate(id, employee)
-      if (!updateEmployee) return res.status(404).json({msg: "empregado não encontrado"})
-        console.log(updateEmployee)
+      const updatedEmployee = await Employees.findByIdAndUpdate(id, employee)
+      if (!updatedEmployee) return res.status(404).json({ msg: "empregado não encontrado" })
 
-      const controllerResponse = handleControllerResponse(updateEmployee)
+      const controllerResponse = handleControllerResponse(updatedEmployee)
 
       return res.status(controllerResponse.status).json(controllerResponse.responseController)
     } catch (error) {
