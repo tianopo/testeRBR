@@ -160,6 +160,7 @@ export default function Home() {
               <Button
                 onClick={handlePreviousPage}
                 disabled={currentPage === 1}
+                cursor={currentPage === 1 ? "not-allowed" : undefined}
                 mr={2}
               >
                 Anterior
@@ -167,6 +168,7 @@ export default function Home() {
               <Button
                 onClick={handleNextPage}
                 disabled={currentPage === totalPages}
+                cursor={currentPage === totalPages ? "not-allowed" : undefined}
               >
                 Próximo
               </Button>
