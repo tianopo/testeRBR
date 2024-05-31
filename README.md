@@ -1,4 +1,13 @@
 # RBR DIGITAL
+## Fotos
+Listar
+![alt text](image-7.png)
+Editar
+![alt text](image-8.png)
+Criar
+![alt text](image-9.png)
+Pesquisa
+![alt text](image-10.png)
 ## Visão Geral
 o RBR Digital é uma aplicação web com o objetivo de demonstração de habilidades com proeficiencia e maestria de um CRUD de funcionários
 ## Backend
